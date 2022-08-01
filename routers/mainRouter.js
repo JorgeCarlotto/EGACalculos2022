@@ -4,5 +4,6 @@ const mainController = require('../controller/mainController');
 
 
 router.get('/',mainController.index);
+router.post('/',mainController.cargarDatos);
 
 module.exports = router;
