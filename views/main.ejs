@@ -5,9 +5,11 @@
     <div class="container">
         <form class="row g-1" method="post" action="/">
     
-            <div class="form-group">
-                <label for="my-input">Hora</label>
-                <input id="my-input" class="form-control" type="number" name="hora">
+            <div>
+                <label for="my-input">Inicio EGA</label>
+                <input type="datetime-local" id="meeting-time"
+                name="firstTime" 
+                min="2022-08-07T00:00" max="2023-12-31T00:00">
             </div>
     
             <div class="form-group">
@@ -25,10 +27,6 @@
                 <input id="my-input" class="form-control" type="number" name="rumbo">
             </div>
 
-            <div class="form-group">
-                <label for="my-input">Cantidad de horas a Navegar</label>
-                <input id="my-input" class="form-control" type="number" name="horas">
-            </div>
     
     
             <h2>Latitud</h2>
@@ -64,46 +62,22 @@
                 <label for="my-input">Segundos</label>
                 <input id="my-input" class="form-control" type="number" name="longSegundos">
             </div>
-    
-            <h4>Tipo de buque</h4>
-    
-            <div class="form-group">
-                <label for="my-select">Tipo de Buques</label>
-                <select id="my-select" class="custom-select" name="tipoDeBuque">
-                    <option>PESQUERO</option>
-                    <option>CARGA</option>
-                    <option>SIN DATO</option>
-                </select>
+            
+            <h4>Hora Final</h4>
+
+
+            <div>
+                <label for="my-input">Fin EGA</label>
+                <input type="datetime-local" id="meeting-time"
+                name="secondTime" 
+                min="2022-08-07T00:00" max="2023-12-31T00:00">
             </div>
-    
-            <h4>Actividad</h4>
-    
-            <div class="form-group">
-                <label for="my-select">Actividad</label>
-                <select id="my-select" class="custom-select" name="actividad">
-                    <option>PESCANDO</option>
-                    <option>NAVEGANDO</option>
-                    <option>FONDEADO</option>
-                    <option>SIN DATO</option>
-                    <option>Otro</option>
-                </select>
-            </div>
+
+
+           
     
     
-            <h4>Metodo de detección</h4>
-    
-            <div class="form-group">
-                <label for="my-select">Tipo de Buques</label>
-                <select id="my-select" class="custom-select" name="detectado">
-                    <option>VISUAL</option>
-                    <option>RADAR</option>
-                    <option>AIS</option>
-                    <option>Otro</option>
-                </select>
-            </div>
-    
-    
-            <button type="submit" class="btn btn-primary">Cargar Barco</button>
+            <button type="submit" class="btn btn-primary">Calcular</button>
           </form>
         </div>
 
