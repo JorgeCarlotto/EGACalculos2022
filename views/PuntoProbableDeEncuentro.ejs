@@ -1,17 +1,27 @@
 <%- include('layouts/header') %> 
 <body>
    
+    <h1>Punto Probable de encuentro</h1>
     <h2>Carga de Datos</h2>
     <div class="container">
-        <form class="row g-1" method="post" action="/">
+        <form class="row g-1" method="post" action="/puntoProbableDeEncuentro">
     
+            <h2>Tiempo</h2>
             <div>
-                <label for="my-input">Inicio EGA</label>
+                <label for="my-input">Hora de posición actual</label>
                 <input type="datetime-local" id="meeting-time"
                 name="firstTime" 
-                min="2022-08-07T00:00" max="2023-12-31T00:00">
+                min="2022-08-07T00:00" max="2023-12-31T00:00" class="form-control">
+            </div>
+
+            <div>
+                <label for="my-input">Hora de posición a calcular</label>
+                <input type="datetime-local" id="meeting-time"
+                name="secondTime" 
+                min="2022-08-07T00:00" max="2023-12-31T00:00" class="form-control">
             </div>
     
+            <h2>Datos del barco</h2>
             <div class="form-group">
                 <label for="my-input">Nombre del Barco</label>
                 <input id="my-input" class="form-control" type="text" name="nombreBarco">
@@ -29,7 +39,7 @@
 
     
     
-            <h2>Latitud</h2>
+            <h2>Latitud Actual</h2>
     
             <div class="form-group">
                 <label for="my-input">Grados</label>
@@ -46,7 +56,7 @@
                 <input id="my-input" class="form-control" type="number" name="latSegundos">
             </div>
     
-            <h2>Longitud</h2>
+            <h2>Longitud Actual</h2>
     
             <div class="form-group">
                 <label for="my-input">Grados</label>
@@ -63,37 +73,44 @@
                 <input id="my-input" class="form-control" type="number" name="longSegundos">
             </div>
             
-            <h4>Hora Final</h4>
+        
 
-
-            <div>
-                <label for="my-input">Fin EGA</label>
-                <input type="datetime-local" id="meeting-time"
-                name="secondTime" 
-                min="2022-08-07T00:00" max="2023-12-31T00:00">
-            </div>
-
-
-           
+            <br>
+            <br>
+            <br>
     
     
             <button type="submit" class="btn btn-primary">Calcular</button>
           </form>
         </div>
+        <br>
+        <br>
+        <br>
 
         <h2>Resultados</h2>
-
-        <p>Distancia al barco Inicio de EGA</p>
-        <p>Distancia a Mar del Plata: <%- distanciaInicial[0] %></p>
-        <p>Distancia a Bahia Blanca: <%- distanciaInicial[1] %></p>
-        <p>Distancia a Viedma: <%- distanciaInicial[2] %></p>
-
-    <br>
-    <br>
-        <h2>Punto Probable de encuentro</h2>
-        <p>Latitud: <%- posicionDesplazada.latitude %> </p>
-        <p>Longitud: <%- posicionDesplazada.longitude %> </p>
+        <br>
+        <br>
+        <h3>Fecha y Hora: <%- datosBarco[3] %></h3>
+        <h3>Embarcación : <%- datosBarco[0] %></h3>
+        <h4>Rumbo Actual: <%- datosBarco[2]  %>°</h4>
+        <h4>Velocidad Actual: <%- datosBarco[1] %> Kts</h4>
+        <h4>Posición Actual: Latitud: <%- datosBarco[5] %> Longitud: 0<%- datosBarco[6] %></h4>
         
+
+        <br>
+        <br>
+        <h3>Punto Probable de encuentro </h3>
+        <h4>Para el dia y hora: <%- datosBarco[4] %> </h4>
+        
+        <h4>Latitud : <%- puntoDeEncuentro.latitude %> </h4>
+        <h4>Longitud : 0<%- puntoDeEncuentro.longitude %> </h4>
+        <br>
+        <br>
+        <h3>Distancia al Punto Probable de encuento </h3>
+        <h4>Aeropuerto Mar del plata: <%- distanciaPuntoDeEncuentro[0] %> Nm</h4>
+        <h4>Aeropuerto Bahia Blanca: <%- distanciaPuntoDeEncuentro[1] %> Nm</h4>
+        <h4>Aeropuerto Viedma: <%- distanciaPuntoDeEncuentro[2] %> Nm</h4>
+      
 
      
 </body>
