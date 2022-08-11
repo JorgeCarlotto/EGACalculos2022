@@ -111,7 +111,75 @@
         <h4>Aeropuerto Bahia Blanca: <%- distanciaPuntoDeEncuentro[1] %> Nm</h4>
         <h4>Aeropuerto Viedma: <%- distanciaPuntoDeEncuentro[2] %> Nm</h4>
       
+        <br>
 
+
+        <h2>RUTAS Y DISTANCIAS</h2>
+        <div class="table-responsive">
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Rutas</th>
+                <th scope="col">Distancia Total</th>
+                <th scope="col">Tiempo Total Estimado EC225 (140KTS)</th>
+                <th scope="col">Tiempo Total Estimado CASA (150KTS)</th>
+                <th scope="col">Combustible Necesario EC225</th>
+                <th scope="col">Combustible Necesario CASA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>MDP-BARCO-MDP</td>
+                <td><%-datosCuadro.sazmToShip%> Nm</td>
+                <td><%-tiempoEc.sazmToShip%></td>
+                <td><%-tiempoCasa.sazmToShip%></td>
+                <td><%-(tiempoEc.sazmToShip) * 700%> kG</td>
+                <td><%-(tiempoCasa.sazmToShip) * 600%> Lbs</td>
+              </tr>
+              <tr>
+                <td>MDP-BARCO-BCA</td>
+                <td><%-datosCuadro.sazmToShipToBca%> Nm</td>
+                <td><%-tiempoEc.sazmToShipToBca%></td>
+                <td><%-tiempoCasa.sazmToShipToBca%></td>
+                <td><%-(tiempoEc.sazmToShipToBca) * 700%> kG</td>
+                <td><%-(tiempoCasa.sazmToShipToBca) * 600%> Lbs</td>              
+            </tr>
+              <tr>
+                <td>MDP-BARCO-VIE</td>
+                <td><%-datosCuadro.sazmToShipToVie%> Nm</td>
+                <td><%-tiempoEc.sazmToShipToVie%></td>
+                <td><%-tiempoCasa.sazmToShipToVie%></td>                
+                <td><%-(tiempoEc.sazmToShipToVie) * 700%> kG</td>
+                <td><%-(tiempoCasa.sazmToShipToVie) * 600%> Lbs</td>              
+              </tr>
+              <tr>
+                <td>MDP-BCA-BARCO-BCA</td>
+                <td><%-datosCuadro.sazmToBcaToShipToBca%> Nm</td>
+                <td><%-tiempoEc.sazmToBcaToShipToBca%></td>
+                <td><%-tiempoCasa.sazmToBcaToShipToBca%></td>  
+                <td><%-(tiempoEc.sazmToBcaToShipToBca) * 700%> kG</td>
+                <td><%-(tiempoCasa.sazmToBcaToShipToBca) * 600%> Lbs</td>               
+            </tr>
+              <tr>
+                <td>MDP-BCA-BARCO-VIE</td>
+                <td><%-datosCuadro.sazmToBcaToShipToVie%> Nm</td>
+                <td><%-tiempoEc.sazmToBcaToShipToVie%></td>
+                <td><%-tiempoCasa.sazmToBcaToShipToVie%></td>  
+                <td><%-(tiempoEc.sazmToBcaToShipToVie) * 700%> kG</td>
+                <td><%-(tiempoCasa.sazmToBcaToShipToVie) * 600%> Lbs</td>               
+              </tr>
+              <tr>
+                <td>MDP-VIE-BARCO-VIE</td>
+                <td><%-datosCuadro.sazmToVieToShipToVie%> Nm</td>
+                <td><%-tiempoEc.sazmToVieToShipToVie%></td>
+                <td><%-tiempoCasa.sazmToVieToShipToVie%></td>  
+                <td><%-(tiempoEc.sazmToVieToShipToVie) * 700%> kG</td>
+                <td><%-(tiempoCasa.sazmToVieToShipToVie) * 600%> Lbs</td>               
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
      
 </body>
 

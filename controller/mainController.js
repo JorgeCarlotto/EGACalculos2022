@@ -136,10 +136,45 @@ let mainController = {
     
     let distanciaAlBarcoDesdeAeropuertos = [distanciaSazm,distanciaSazb,distanciaSavv]
 
+
+
+    let distanciasCuadro ={
+        sazmToShip : ((distanciaSazm) *2),
+        sazmToShipToBca:((distanciaSazm) *1) + ((distanciaSazb) *1),
+        sazmToShipToVie:((distanciaSazm) *1) + ((distanciaSavv) *1),
+        sazmToBcaToShipToBca: 221 + ((distanciaSazb) *2),
+        sazmToBcaToShipToVie: 221 + ((distanciaSazb) *1) + ((distanciaSavv) *1),
+        sazmToVieToShipToVie: 307 + ((distanciaSavv) *2)
+    }
+
+  let tiempoConEc225 ={
+    sazmToShip: ((distanciasCuadro.sazmToShip) / 140).toFixed(1),
+    sazmToShipToBca: ((distanciasCuadro.sazmToShipToBca) / 140).toFixed(1),
+    sazmToShipToVie: ((distanciasCuadro.sazmToShipToVie) / 140).toFixed(1),
+    sazmToBcaToShipToBca: ((distanciasCuadro.sazmToBcaToShipToBca) / 140).toFixed(1),
+    sazmToBcaToShipToVie: ((distanciasCuadro.sazmToBcaToShipToVie) / 140).toFixed(1),
+    sazmToVieToShipToVie: ((distanciasCuadro.sazmToVieToShipToVie) / 140).toFixed(1),
+  }
+
+  let tiempoConCasaC212 ={
+    sazmToShip: ((distanciasCuadro.sazmToShip) / 150).toFixed(1),
+    sazmToShipToBca: ((distanciasCuadro.sazmToShipToBca) / 150).toFixed(1),
+    sazmToShipToVie: ((distanciasCuadro.sazmToShipToVie) / 150).toFixed(1),
+    sazmToBcaToShipToBca: ((distanciasCuadro.sazmToBcaToShipToBca) / 150).toFixed(1),
+    sazmToBcaToShipToVie: ((distanciasCuadro.sazmToBcaToShipToVie) / 150).toFixed(1),
+    sazmToVieToShipToVie: ((distanciasCuadro.sazmToVieToShipToVie) / 150).toFixed(1),
+  }
+
+   
+  
+    
+
+   
     let datosAportadosUsuario=[req.body.nombreBarco,req.body.velocidad,req.body.rumbo,req.body.firstTime,req.body.secondTime,puntoInicialdelBarco.latitude,puntoInicialdelBarco.longitude]
 
 
-    res.render("puntoProbableDeEncuentro",{puntoDeEncuentro:puntoDesplazadoFinal,distanciaPuntoDeEncuentro:distanciaAlBarcoDesdeAeropuertos,datosBarco:datosAportadosUsuario})
+    res.render("puntoProbableDeEncuentro",{puntoDeEncuentro:puntoDesplazadoFinal,distanciaPuntoDeEncuentro:distanciaAlBarcoDesdeAeropuertos,datosBarco:datosAportadosUsuario,datosCuadro:distanciasCuadro,
+    tiempoEc:tiempoConEc225,tiempoCasa:tiempoConCasaC212})
   }
 
 
